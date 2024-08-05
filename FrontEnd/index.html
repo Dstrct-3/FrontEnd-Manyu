@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Bersusun</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-toggle">
+
+            </div>
+            <img 
+            class="navbar-logo logo-large" 
+            src="ahlanmagz.png" 
+            alt="Logo ahlanmagz"
+            />
+            <img 
+            class="navbar-logo logo-mark" 
+            src="ahlanmagz.png" 
+            alt="Logo ahlanmagz"
+            />
+            <ul class="navbar-group">
+                <a href="/">
+                    <li class="navbar-item">Beranda</li>
+                </a>
+                <li class="navbar-item">
+                    Blog
+                    <ul class="navbar-down">
+                        <a href="/css">
+                            <li class="navbar-item">Sejarah Ahlan</li>
+                        </a>
+                        <li class="navbar-item">Ahlan Blog</li>
+                        <li class="navbar-item">Ahlan Crew</li>
+                    </ul>
+                </li>
+                <li class="navbar-item">
+                    E-Magazine
+                    <ul class="navbar-down">
+                        <li class="navbar-item">19th - Diri Dalam Jerami</li>
+                        <li class="navbar-item">20th - MindSick</li>
+                        <li class="navbar-item">21st - Boneka Wayang</li>
+                    </ul>    
+                </li>
+                <li class="navbar-item">About</li>
+                <li class="navbar-item">Shop</li>
+            </ul>
+            <div class="navbar-action">
+                <button>Login</button>
+                <button>Register</button>
+            </div>
+        </nav>
+    </header>
+    <script>
+        const navItem = document.querySelectorAll(".navbar-group > .navbar-item");
+        
+        navItem.forEach((nav) => {
+            const navDown = nav.querySelector(".navbar-down");
+            
+        if (navDown) {
+            nav.addEventListener("mouseenter", () => {
+                navDown.classList.add("navbar-expand");
+            });
+            nav.addEventListener("mouseleave", () => {
+                    navDown.classList.remove("navbar-expand");
+            });
+        }
+    });
+    const menuToggle = document.querySelector(".navbar-toggle");
+
+    menuToggle.addEventListener("click", () => {
+        document
+        .querySelector(".navbar-group")
+        .classList.toggle("navbar-expand");
+        document.querySelector(".navbar-action").style.display = "inherit";
+    });
+    </script>
+</body>
+</html>
